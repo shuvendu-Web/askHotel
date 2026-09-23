@@ -24,6 +24,7 @@ export interface CarouselItem {
   defaultImage: string;
   selectedImage: string;
   alt?: string;
+  author?: string;
 }
 
 export interface CalendlyCarouselProps extends HTMLAttributes<HTMLDivElement> {
@@ -538,7 +539,7 @@ export function CalendlyCarousel({
                 >
                   <div className="size-full rounded-[20px] sm:rounded-[24px] overflow-hidden bg-muted relative">
                     <Image
-                      alt={item.alt || item.author}
+                      alt={item.alt || item.author || ""}
                       src={item.defaultImage}
                       fill
                       unoptimized
@@ -637,7 +638,7 @@ export function CalendlyCarousel({
 
                     <div className="relative shrink-0 overflow-hidden rounded-[18px] sm:rounded-[22px] bg-muted w-full md:w-[clamp(180px,44%,330px)] flex-1 md:flex-initial md:h-full max-h-[220px] md:max-h-none">
                       <Image
-                        alt={item.alt || item.author}
+                        alt={item.alt || item.author || ""}
                         src={item.selectedImage}
                         fill
                         unoptimized
